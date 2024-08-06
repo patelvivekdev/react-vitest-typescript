@@ -7,12 +7,41 @@ on:
     branches: [master]
 
 jobs:
-  build-and-test:
+  check-formatting:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout respository
+        uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+      - run: npm ci
+        name: Install modules from npm
+      - name: Check formatting with Prettier
+        run: npm run format:check
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout respository
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
       - run: npm ci
       - run: npm test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout respository
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
