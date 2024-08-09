@@ -7,6 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# test coverage
+
+/.history
+coverage
+/playwright-report/
+/playwright/.cache/
+/test-results/
+
+
 node_modules
 dist
 dist-ssr
