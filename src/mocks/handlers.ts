@@ -1,9 +1,9 @@
 import { http, HttpResponse } from 'msw';
 
 export const handlers = [
-  http.get('/users/1', () => {
+  http.get('https://jsonplaceholder.typicode.com/users/1', () => {
     return HttpResponse.json({
-      id: '1',
+      id: 1,
       name: 'Leanne Graham',
       username: 'Bret',
       email: 'Sincere@april.biz',
@@ -23,6 +23,32 @@ export const handlers = [
         name: 'Romaguera-Crona',
         catchPhrase: 'Multi-layered client-server neural-net',
         bs: 'harness real-time e-markets',
+      },
+    });
+  }),
+
+  http.get('https://jsonplaceholder.typicode.com/users/2', () => {
+    return HttpResponse.json({
+      id: 2,
+      name: 'Ervin Howell',
+      username: 'Antonette',
+      email: 'Shanna@melissa.tv',
+      address: {
+        street: 'Victor Plains',
+        suite: 'Suite 879',
+        city: 'Wisokyburgh',
+        zipcode: '90566-7771',
+        geo: {
+          lat: '-43.9509',
+          lng: '-34.4618',
+        },
+      },
+      phone: '010-692-6593 x09125',
+      website: 'anastasia.net',
+      company: {
+        name: 'Deckow-Crist',
+        catchPhrase: 'Proactive didactic contingency',
+        bs: 'synergize scalable supply-chains',
       },
     });
   }),

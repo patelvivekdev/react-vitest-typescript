@@ -15,7 +15,7 @@ describe('App tests', () => {
 
   it('should increment the count on button click', async () => {
     render(<App />);
-    const button = screen.getByRole('button');
+    const button = screen.getByTestId('increment');
 
     const user = userEvent.setup();
     await user.click(button);
