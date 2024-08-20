@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# React + Vitest + Typescript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple project to show how to test a React application using Vitest.
 
-Currently, two official plugins are available:
+This project also uses following libraries:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://reactjs.org)
+- [Typescript](https://www.typescriptlang.org)
+- [React Router](https://reactrouter.com)
+- [React Query](https://react-query.tanstack.com)
+- [Vitest](https://vitest.dev)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- [Playwright](https://playwright.dev)
+- [MSW](https://mswjs.io)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [Vite](https://vitejs.dev)
+- [ESLint](https://eslint.org)
+- [Prettier](https://prettier.io)
+- [Husky](https://typicode.github.io/husky)
+- [Lint Staged](https://github.com/lint-staged/lint-staged)
