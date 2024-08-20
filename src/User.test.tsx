@@ -6,6 +6,6 @@ it('fetches the user info', async () => {
 
   const user = await response.json();
 
-  expect(user.id).toEqual('1');
+  expect(user.id).toEqual(1);
   expect(user.name).toEqual('Leanne Graham');
 });
