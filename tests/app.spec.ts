@@ -25,4 +25,8 @@ test('home page', async ({ page }) => {
   await button.click();
 
   await expect(button).toHaveText('count is 4');
+
+  await expect(page.getByText('User: Leanne Graham')).toHaveText(
+    'User: Leanne Graham',
+  );
 });
