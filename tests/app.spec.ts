@@ -6,27 +6,33 @@ test('home page', async ({ page }) => {
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle('Vite + React + TS');
 
-  const button = page.getByRole('button', { name: 'count is' });
+  const countBtn = page.getByTestId('increment');
 
   // Expect an element "to be visible".
-  await expect(button).toBeVisible();
+  await expect(countBtn).toBeVisible();
 
   // Expect an element "to have text" content.
-  await expect(button).toHaveText('count is 0');
+  await expect(countBtn).toHaveText('count is 0');
 
   // Click an element.
-  await button.click();
+  await countBtn.click();
 
   // Expect an element "to have text" content.
-  await expect(button).toHaveText('count is 1');
+  await expect(countBtn).toHaveText('count is 1');
 
-  await button.click();
-  await button.click();
-  await button.click();
+  await countBtn.click();
+  await countBtn.click();
+  await countBtn.click();
 
-  await expect(button).toHaveText('count is 4');
+  await expect(countBtn).toHaveText('count is 4');
 
-  await expect(page.getByText('User: Leanne Graham')).toHaveText(
-    'User: Leanne Graham',
-  );
+  const user1Btn = page.getByTestId('user-1');
+  await user1Btn.click();
+
+  await expect(page.getByTestId('user')).toHaveText('Leanne Graham');
+
+  const user2Btn = page.getByTestId('user-2');
+  await user2Btn.click();
+
+  await expect(page.getByTestId('user')).toHaveText('Ervin Howell');
 });
